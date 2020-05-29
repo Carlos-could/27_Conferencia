@@ -98,6 +98,169 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+html{
+   box-sizing: border-box;
+}
+
+*,*:before, *::after{
+   box-sizing: inherit;
+}
+body{
+   background-color: #f2f2f2;
+   font-family: 'Open Sans', sans-serif;
+}
+/* Globales */
+.contenedor{
+   width: 98%;
+   margin: 0 auto;
+}
+
+@media (min-width: 480px) {
+   .contenedor{
+      width: 95%;
+   }
+}
+@media (min-width: 768px) {
+   .contenedor{
+      width: 90%;
+   }
+}
+@media (min-width: 992px) {
+   .contenedor{
+      width: 90%;
+      max-width: 1100px;
+   }
+}
+
+h2{
+   font-family: 'Oswald', sans-serif;
+}
+
+/* Header */
+
+.hero{
+   background-image: url(../img/encabezado.jpg);
+   height: 100vh;
+   background-position: top center;
+   background-size: cover;
+}
+
+.contenido-header{
+   padding-top: 40px;
+}
+
+.redes-sociales{
+   text-align: center;
+}
+.redes-sociales a{
+   color: #ffffff;
+   font-size: 2rem;
+   margin-right: 20px;
+}
+
+.redes-sociales a:last-child{
+   margin-right: 0;
+}
+
+.informacion-evento{
+   text-align: center;
+   color: #ffffff;
+}
+@media (min-width: 768px) {
+   .informacion-evento{
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 50px;
+   }
+
+}
+.informacion-evento p{
+   margin: 0;
+   display: inline;
+   font-size: 20px;
+}
+.informacion-evento i{
+   color: #fe4918;
+   font-size: 2rem;
+}
+.fecha{
+   float: left;
+   text-transform: uppercase;
+}
+.ciudad{
+   float: right;
+   text-transform: uppercase;
+}
+.nombre-sitio{
+   font-size: 5.9vw;
+   text-transform: uppercase;
+   font-family: 'PT Sans', sans-serif;
+}
+@media (min-width: 768px) {
+   .nombre-sitio{
+      font-size: 7vw;
+      margin: 0;
+   }
+}
+p.slogan span{
+   font-weight: bold;
+}
+
+/* Barra */
+
+.barra{
+   background-color: #353535;
+   padding: 20px 0;
+}
+.logo{
+   width: 80%;
+}
+.logo img{
+   width: 100%;
+}
+@media (min-width: 768px) {
+   .logo{
+      width: 33%;
+      float: left;
+   }
+}
+.navegacion-principal{
+   display: none;
+}
+.navegacion-principal a{
+   font-family: 'Oswald', sans-serif;
+   color: #ffffff;
+   font-size: 1.2rem;
+   text-transform: uppercase;
+   text-decoration: none;
+   transition: all .6s ease;
+}
+.navegacion-principal a:hover{
+   background-color: #fe4918;
+}
+.navegacion-principal a:last-child{
+   border: 2px solid #fe4918;
+   color: #fe4918;
+}
+.navegacion-principal a:last-child:hover{
+   color: #ffffff;
+}
+@media (min-width: 768px) {
+   .navegacion-principal{
+      width: 67%;
+      float: right;
+      display: block;
+      text-align: right;
+   }
+   .navegacion-principal a{
+      margin-right: 20px;
+      padding: 10px 10px;
+      display: inline-block;
+   }
+}
+
+
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
@@ -262,4 +425,3 @@ textarea {
     page-break-after: avoid;
   }
 }
-
