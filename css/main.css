@@ -299,7 +299,6 @@ p.slogan span{
   background-color: #ffffff;
   display: block;
 }
-
 @media (min-width: 768px){
   .menu-movil{
     display: none;
