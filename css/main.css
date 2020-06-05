@@ -176,9 +176,15 @@ ul{
    display: inline-block;
    margin-top: 20px;
    transition: all .3s ease;
+   border: 1px solid #fe4918;
 }
 .button:hover{
    background-color: #e33000;
+}
+.button.hollow,
+.button.hollow:hover{
+  background-color: #ffffff;
+  color: #fe4918;
 }
 .float-right{
    float: right;
@@ -186,7 +192,6 @@ ul{
 
 
 /* Header */
-
 .hero{
    background-image: url(../img/encabezado.jpg);
    height: 100vh;
@@ -206,7 +211,6 @@ ul{
    font-size: 2rem;
    margin-right: 20px;
 }
-
 .redes-sociales a:last-child{
    margin-right: 0;
 }
@@ -232,14 +236,17 @@ ul{
    color: #fe4918;
    font-size: 2rem;
 }
+
 .fecha{
    float: left;
    text-transform: uppercase;
 }
+
 .ciudad{
    float: right;
    text-transform: uppercase;
 }
+
 .nombre-sitio{
    font-size: 5.9vw;
    text-transform: uppercase;
@@ -251,12 +258,12 @@ ul{
       margin: 0;
    }
 }
+
 p.slogan span{
    font-weight: bold;
 }
 
 /* Barra */
-
 .barra{
    background-color: #353535;
    padding: 20px 0;
@@ -336,7 +343,7 @@ p.slogan span{
   background-color: #ffffff;
   display: block;
 }
-/* Talleres */
+/* ---------Talleres---------- */
 
 section.programa{
    position: relative;
@@ -460,8 +467,8 @@ nav.menu-programa a i,
   bottom: -80px;
   opacity: 0;
 }
-/* Contador */
 
+/* ---------Contador---------- */
 .parallax::before{
   position: absolute;
   width: 100%;
@@ -508,7 +515,7 @@ p.numero{
   margin: 0 0 10px 0;
 }
 
-/* Tabla de Precios */
+/* ---------Tabla de Precios---------- */
 
 .lista-precios>li {
    padding: 10px;
@@ -528,7 +535,14 @@ p.numero{
    padding-top: 40px;
    padding-bottom: 40px;
    text-align: center;
+   transition: .2s ease;
 }
+.lista-precios .tabla-precio:hover{
+  transform: scale(1.1);
+  border: 1px solid #fe4918;
+  box-shadow: 0 0 20px #666;
+}
+
 .tabla-precio ul li {
     font-family: 'PT Sans', sans-serif;
     font-size: 16px;
@@ -538,14 +552,15 @@ p.numero{
     /* line-height: 26px; */
 }
 .tabla-precio ul li::before{
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: '\f00c';
     display: inline-block;
-    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+    /* vertical-align: text-top; */
     padding: 0 5px;
     font-size: 20px;
     color: green;
-    -webkit-font-smoothing: antialiased;
-    content: '\f00c';
 }
 .tabla-precio h3{
     font-size: 16px;
@@ -556,6 +571,14 @@ p.numero{
     font-family: 'Oswald', sans-serif;
     margin: 15px 0;
 }
+
+/* ---------Google Maps---------- */
+.mapa{
+  height: 420px;
+  background-color: green;
+}
+/* ---------Testimoniales---------- */
+
 /* ==========================================================================
    Helper classes
    ========================================================================== */
