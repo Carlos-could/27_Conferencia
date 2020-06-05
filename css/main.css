@@ -501,15 +501,61 @@ nav.menu-programa a i,
     width: 25%;
   }
 }
-
-.numero{
+p.numero{
   color: #fe4918;
   font-size: 4rem;
   display: block;
   margin: 0 0 10px 0;
-
 }
 
+/* Tabla de Precios */
+
+.lista-precios>li {
+   padding: 10px;
+   /* display: inline-block; */
+}
+
+@media (min-width: 768px) {
+  ul.lista-precios > li{
+    width: 33.3%;
+    float: left;
+  }
+}
+
+.lista-precios .tabla-precio{
+   border: 1px solid #e1e1e1;
+   background-color: #ffffff;
+   padding-top: 40px;
+   padding-bottom: 40px;
+   text-align: center;
+}
+.tabla-precio ul li {
+    font-family: 'PT Sans', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    color: #868686;
+    /* line-height: 26px; */
+}
+.tabla-precio ul li::before{
+    font-family: 'FontAwesome';
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 5px;
+    font-size: 20px;
+    color: green;
+    -webkit-font-smoothing: antialiased;
+    content: '\f00c';
+}
+.tabla-precio h3{
+    font-size: 16px;
+    text-transform: uppercase;
+}
+.tabla-precio .numero{
+    color: #000000;
+    font-family: 'Oswald', sans-serif;
+    margin: 15px 0;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
