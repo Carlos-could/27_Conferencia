@@ -160,11 +160,6 @@ h3{
    font-family: 'PT Sans', sans-serif;
    margin: 0;
 }
-ul{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
 .button{
    background-color: #fe4918;
    padding: 10px 40px;
@@ -178,9 +173,7 @@ ul{
    transition: all .3s ease;
    border: 1px solid #fe4918;
 }
-.button:hover{
-   background-color: #e33000;
-}
+
 .button.hollow,
 .button.hollow:hover{
   background-color: #ffffff;
@@ -192,8 +185,16 @@ ul{
 }
 .button.transparente:hover{
     border: 2px solid #fe4918;
- }
 
+ }
+ ul{
+     list-style: none;
+     margin: 0;
+     padding: 0;
+ }
+ .button:hover{
+    background-color: #e33000;
+ }
 .float-right{
    float: right;
 }
@@ -508,7 +509,7 @@ nav.menu-programa a i,
   text-align: center;
   color: #ffffff;
   text-transform: uppercase;
-  font-family: 'Oswald', sans-serif;
+  /* font-family: 'Oswald', sans-serif; */
   font-size: 1rem;
 }
 @media (min-width: 768px) {
@@ -521,6 +522,7 @@ p.numero{
   font-size: 4rem;
   display: block;
   margin: 0 0 10px 0;
+  font-family: 'Oswald', sans-serif
 }
 
 /* ---------Tabla de Precios---------- */
@@ -677,8 +679,19 @@ div.newsletter::before{
     font-size: 7vw;
     font-family: 'PT Sans', sans-serif;
 }
-
-
+/* Cuenta regresiva */
+.cuenta-regresiva ul li{
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.4rem;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .cuenta-regresiva ul li{
+    width: 25%;
+    float: left;
+  }
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
