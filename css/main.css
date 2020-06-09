@@ -529,7 +529,9 @@ p.numero{
 
 .lista-precios>li {
    padding: 10px;
-   /* display: inline-block; */
+   width: 80%;
+   display: block;
+   margin: 0 auto;
 }
 
 @media (min-width: 768px) {
@@ -681,30 +683,30 @@ div.newsletter::before{
 }
 /* Cuenta regresiva */
 .cuenta-regresiva ul li{
+  width: 50%;
+  float: left;
   text-transform: uppercase;
   font-family: 'Oswald', sans-serif;
   font-size: 1.4rem;
   text-align: center;
+  margin-bottom: 2rem;
 }
 @media (min-width: 768px) {
   .cuenta-regresiva ul li{
     width: 25%;
-    float: left;
   }
 }
 
-/* Footer */
-
+/* ---------Footer---------- */
 .site-footer{
   background-color: #353535;
-  /* padding-top: 40px;
+  padding-top: 40px;
   margin-top: 20px; */
 }
-/* footer .contenedor >div{
+.site-footer .contenedor >div{
   color: #ffffff;
   font-size: .8rem;
   padding: 0 2rem;
-  text-align-last: justify;
 }
 
 @media (min-width: 768px) {
@@ -712,9 +714,29 @@ div.newsletter::before{
     width: 33.3%;
     float: left;
   }
-} */
-
-
+}
+footer h3{
+  color: #ffffff;
+  text-transform: uppercase;
+  font-family: 'Oswald', sans-serif;
+  margin-bottom: 2rem;
+}
+footer h3 span{
+  color: #fe4918;
+}
+footer .ultimos-tweets li{
+  margin-bottom: 10px;
+}
+footer nav.redes-sociales{
+  text-align: left;
+}
+.copyright{
+  background-color: #2e2e2e;
+  padding: 1rem 0;
+  color: #ffffff;
+  text-align: center;
+  margin: 2rem 0 0 0;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */
