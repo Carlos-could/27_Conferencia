@@ -12,7 +12,7 @@ var regalo = document.getElementById('regalo');
 
       //Campos Pases
       var pase_dia = document.getElementById('pase_dia');
-      var pase_dosdias = document.getElementById('pase_2_dias');
+      var pase_dosdias = document.getElementById('pase_dosdias');
       var pase_completo = document.getElementById('pase_completo');
 
       //Botones y divs
@@ -40,7 +40,7 @@ var regalo = document.getElementById('regalo');
           regalo.focus();
         }else{
           var boletosDia = parseInt(pase_dia.value , 10) || 0,
-              boletos2Dias = parseInt(pase_2_dias.value, 10) || 0,
+              boletos2Dias = parseInt(pase_dosdias.value, 10) || 0,
               boletoCompleto = parseInt(pase_completo.value, 10) || 0,
               cantCamisas = parseInt(camisas.value, 10) || 0,
               cantEtiquetas = parseInt(etiquetas.value, 10) || 0;
@@ -77,8 +77,9 @@ var regalo = document.getElementById('regalo');
       }
 
       function mostrarDias() {
-        var boletosDia = parseInt(pase_dia.value , 10) || 0,
-            boletos2Dias = parseInt(pase_2_dias.value,10) || 0,
+
+        var boletosDia = parseInt(pase_dia.value, 10) || 0,
+            boletos2Dias = parseInt(pase_dosdias.value, 10) || 0,
             boletoCompleto = parseInt(pase_completo.value, 10) || 0;
 
             var diasElegidos = [];
@@ -95,6 +96,26 @@ var regalo = document.getElementById('regalo');
 
             for(var i= 0; i < diasElegidos.length; i++){
               document.getElementById(diasElegidos[i]).style.display = "block";
+            }
+
+
+            var contenido_dia =document.querySelectorAll('.contenido-dia');
+            switch (diasElegidos.length) {
+              case 0:
+                    for(var i= 0; i < 3; i++){
+                        contenido_dia[i].style.display = "none";
+                        }
+              break;
+              case 1:
+                    for(var i= 1; i < 3; i++){
+                        contenido_dia[i].style.display = "none";
+                        }
+              break;
+              case 2:
+                    for(var i= 2; i < 3; i++){
+                        contenido_dia[i].style.display = "none";
+                        }
+              break;
             }
       }
 
