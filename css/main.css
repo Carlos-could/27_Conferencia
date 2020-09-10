@@ -856,6 +856,14 @@ div.resumen input{
   font-size: 2em;
   color: #fe4918;
 }
+
+#error{
+   clear: both;
+   margin: 1rem;
+   padding: .5rem;
+   text-align: center;
+   display: none;
+}
 /* ==========================================================================
    Helper classes
    ========================================================================== */

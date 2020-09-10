@@ -1,9 +1,20 @@
-(function(){
+(function() {
   "use strict";
 
-var regalo = document.getElementById('regalo');
-
+  var regalo = document.getElementById('regalo');
   document.addEventListener('DOMContentLoaded', function(){
+
+     // Mapa
+     var map = L.map('mapa').setView([48.113119, 11.529647], 17);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+      }).addTo(map);
+
+      L.marker([48.113119, 11.529647]).addTo(map)
+          .bindPopup('Mi casa.... teléfono.!')
+          .openPopup();
+
 
       //Campos Datos Usuario
       var nombre = document.getElementById('nombre');
@@ -17,20 +28,47 @@ var regalo = document.getElementById('regalo');
 
       //Botones y divs
       var calcular = document.getElementById('calcular');
-      var errorDiv = document.getElementById('errorDiv');
+      var errorDiv = document.getElementById('error');
       var botonRegistro = document.getElementById('btnRegistro');
       var lista_productos = document.getElementById('lista-productos');
       var suma = document.getElementById('suma-total');
 
       //EXTRAS
-      var camisas = document.getElementById('camisa_evento')
-      var etiquetas = document.getElementById('etiquetas')
+      var camisas = document.getElementById('camisa_evento');
+      var etiquetas = document.getElementById('etiquetas');
 
       calcular.addEventListener('click',calcularMontos);
+
       pase_dia.addEventListener('blur',mostrarDias);
       pase_dosdias.addEventListener('blur',mostrarDias);
       pase_completo.addEventListener('blur',mostrarDias);
 
+      nombre.addEventListener('blur', validarCampos);
+      apellido.addEventListener('blur', validarCampos);
+      email.addEventListener('blur', validarEmail);
+
+
+      function validarCampos() {
+         if(this.value == ""){
+            errorDiv.style.display = "block";
+            errorDiv.innerHTML = "este campo es obligatorio"
+            errorDiv.style.border = '1px solid red';
+         }else {
+            errorDiv.style.display = "none";
+            errorDiv.style.border = '1px solid #cccccc';
+         }
+      }
+
+      function validarEmail() {
+         if(this.value.indexOf('@') > -1){
+            errorDiv.style.display = "none";
+            errorDiv.style.border = '1px solid #cccccc';
+         }else{
+            errorDiv.style.display = "block";
+            errorDiv.innerHTML = "debe tener al menos un @"
+            errorDiv.style.border = '1px solid red';
+         }
+      }
 
 
       function calcularMontos(event){
@@ -94,12 +132,26 @@ var regalo = document.getElementById('regalo');
               diasElegidos.push('viernes', 'sabado', 'domingo');
             }
 
-            for(var i= 0; i < diasElegidos.length; i++){
-              document.getElementById(diasElegidos[i]).style.display = "block";
+            //filtrado de dias repetidos 'Elegante'
+            var NewdiasElegidos = diasElegidos.filter((dia, index) => diasElegidos.indexOf(dia) === index)
+
+
+            //Mostrando eventos 'Viernes, Sabado o Domingo'
+            for(var i= 0; i < NewdiasElegidos.length; i++){
+              document.getElementById(NewdiasElegidos[i]).style.display = "block";
             }
+
+            var xdias = NewdiasElegidos.length;
+            console.log(NewdiasElegidos);
 
 
             var contenido_dia =document.querySelectorAll('.contenido-dia');
+
+
+            for( var x = xdias; x < 3; x++){
+                 contenido_dia[x].style.display = "none";
+               }
+
             switch (diasElegidos.length) {
               case 0:
                     for(var i= 0; i < 3; i++){
@@ -121,4 +173,4 @@ var regalo = document.getElementById('regalo');
 
 
     }); //DOM CONTENT LOADED
-  })();
+})();
