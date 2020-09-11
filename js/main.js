@@ -2,19 +2,9 @@
   "use strict";
 
   var regalo = document.getElementById('regalo');
-  document.addEventListener('DOMContentLoaded', function(){
 
-     // Mapa
-     var map = L.map('mapa').setView([48.113119, 11.529647], 17);
-
-      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-      }).addTo(map);
-
-      L.marker([48.113119, 11.529647]).addTo(map)
-          .bindPopup('Mi casa.... teléfono.!')
-          .openPopup();
-
+  document.addEventListener('DOMContentLoaded', ready);
+  function ready() {
 
       //Campos Datos Usuario
       var nombre = document.getElementById('nombre');
@@ -42,10 +32,10 @@
       pase_dia.addEventListener('blur',mostrarDias);
       pase_dosdias.addEventListener('blur',mostrarDias);
       pase_completo.addEventListener('blur',mostrarDias);
-
       nombre.addEventListener('blur', validarCampos);
       apellido.addEventListener('blur', validarCampos);
       email.addEventListener('blur', validarEmail);
+
 
 
       function validarCampos() {
@@ -70,13 +60,12 @@
          }
       }
 
-
       function calcularMontos(event){
         event.preventDefault();
         if(regalo.value === ""){
           alert('debes elegir un regalo')
           regalo.focus();
-        }else{
+        } else{
           var boletosDia = parseInt(pase_dia.value , 10) || 0,
               boletos2Dias = parseInt(pase_dosdias.value, 10) || 0,
               boletoCompleto = parseInt(pase_completo.value, 10) || 0,
@@ -172,5 +161,5 @@
       }
 
 
-    }); //DOM CONTENT LOADED
+    }; //DOM CONTENT LOADED
 })();
