@@ -414,6 +414,11 @@ nav.menu-programa a i,
    font-size: 1.6rem;
    margin-right: 14px;
 }
+.ocultar{
+  display: none;
+}
+
+
 /* Detalle Evento */
 .detalle-evento{
    margin-top: 20px;
@@ -428,7 +433,8 @@ nav.menu-programa a i,
    font-size: 1.2rem;
 }
 
-/* Invitados */
+/*
+.........................................Invitados */
 .lista-invitados li{
     padding: 10px;
     float: left;
@@ -477,7 +483,8 @@ nav.menu-programa a i,
   opacity: 0;
 }
 
-/* ---------Contador---------- */
+/*
+------------------------Contador----------------*/
 .parallax::before{
   position: absolute;
   width: 100%;

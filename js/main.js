@@ -163,3 +163,15 @@
 
     }; //DOM CONTENT LOADED
 })();
+
+//Programa de Conferencias
+$(function() {
+  $('.programa-evento .info-curso:first').show()
+  $('.menu-programa a').on('click', function() {
+    $('.ocultar').hide();
+
+    var enlace = $(this).attr('href')
+    $(enlace).fadeIn(1000);
+
+  });
+});
