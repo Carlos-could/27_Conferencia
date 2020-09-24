@@ -21,7 +21,7 @@
 
             <nav class="menu-programa">
               <a href="#talleres"><i class="fas fa-code"></i>Talleres</a>
-              <a href="#conferencias"><i class="fas fa-comment"></i>Conferencias</a>
+              <a href="#conferencias"><i class="far fa-comment"></i>Conferencias</a>
               <a href="#seminarios"><i class="fas fa-university"></i>Seminarios</a>
             </nav>
 
@@ -30,13 +30,13 @@
                   <h3>HTML5, CSS3 y JavaScript</h3>
                   <p><i class="far fa-clock"></i>16:00 hrs</p>
                   <p><i class="far fa-calendar-alt"></i>10 de Dic</p>
-                  <p><i class="fas fa-user"></i>Juan Pablo de la Torre Valdez</p>
+                  <p><i class="fas fa-user-circle"></i>Juan Pablo de la Torre Valdez</p>
                </div>
                <div class="detalle-evento">
                   <h3>Responsive Web Design</h3>
                   <p><i class="far fa-clock"></i>20:00 hrs</p>
                   <p><i class="far fa-calendar-alt"></i>10 de Dic</p>
-                  <p><i class="fas fa-user"></i>Juan Pablo de la Torre Valdez</p>
+                  <p><i class="fas fa-user-circle"></i>Juan Pablo de la Torre Valdez</p>
                </div>
                <a href="#" class="button float-right">Ver todos</a>
             </div> <!--Talleres-->

@@ -1,7 +1,5 @@
 <?php include_once 'includes/templates/header.php'; ?>
 
-
-
 <section class="seccion contenedor">
   <h2>Calendario de Eventos</h2>
 
@@ -24,76 +22,73 @@
     }
    ?>
 
-  <div class="calendario">
-    <?php
-      $calendario = array();
+   <div class="calendario">
+       <?php
+         $calendario = array();
+         //imprimimos los resultados
+         //fetch_assoc, es el formato como se muestra
+         while ( $eventos = $resultado->fetch_assoc() ) {
 
+           // obtener fecha del evento
+           $fecha = $eventos['fecha_evento'];
 
+           $evento = array(
+               'titulo' => $eventos['nombre_evento'],
+               'fecha' => $eventos['fecha_evento'],
+               'hora' => $eventos['hora_evento'],
+               'categoria' => $eventos['cat_evento'],
+               'icono' => $eventos['icono'],
+               'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']
+           );
+           $calendario[$fecha] [] = $evento;
+         } // while de fetch_assoc() ?>
 
-      //imprimimos los resultados
-      //fetch_assoc, es el formato como se muestra
-      while ( $eventos = $resultado->fetch_assoc() ) {
-
-        // obtener fecha del evento
-        $fecha = $eventos['fecha_evento'];
-
-        $evento = array(
-            'titulo' => $eventos['nombre_evento'],
-            'fecha' => $eventos['fecha_evento'],
-            'hora' => $eventos['hora_evento'],
-            'categoria' => $eventos['cat_evento'],
-            'icono' => $eventos['icono'],
-            'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']
-        );
-
-        $calendario[$fecha] [] = $evento;
-        ?>
-
-    <?php } // while de fetch_assoc() ?>
-
-    <?php
-      //imprimir todos los Eventos
-      foreach ($calendario as $dia => $lista_eventos) { ?>
-        <h3>
-          <i class="fas fa-calendar-alt"></i>
-
-          <?php
-          //Unix
-          setlocale(LC_TIME, 'es_ES.UTF-8');
-          //Windows
-          setlocale(LC_TIME, 'spanish');
-          echo strftime("%A, %d de %B del %Y", strtotime($dia) ); ?>
-        </h3>
-        <?php foreach ($lista_eventos as $evento) { ?>
+       <?php
+         //imprimir todos los Eventos
+       foreach ($calendario as $dia => $lista_eventos) { ?>
+         <h3>
+           <i class="fas fa-calendar-alt"></i>
+           <?php
+           //Unix
+           setlocale(LC_TIME, 'es_ES.UTF-8');
+           //Windows
+           setlocale(LC_TIME, 'spanish');
+           echo strftime("%A, %d de %B del %Y", strtotime($dia) );
+           ?>
+         </h3>
+         
+         <?php foreach ($lista_eventos as $evento) { ?>
             <div class="dia">
-              <p class="titulo"> <?php echo $evento['titulo']; ?></p>
-              <p class="hora">
-                <i class="far fa-clock-o" aria-hidden="true"></i>
-
-                <?php echo $evento['fecha'] . " " . $evento['hora']; ?>
-              </p>
-              <p>
-                <i class="fas fa-landmark"></i>
-                <?php echo $evento['categoria']; ?></p>
-              <p>
-                <i class="far fa-user" aria-hidden="true"></i>
-                <?php echo $evento['invitado']; ?>
-              </p>
-              
+                <p class="titulo"> <?php echo $evento['titulo']; ?></p>
+                <p class="hora">
+                    <i class="far fa-clock-o" aria-hidden="true"></i>
+                    <?php echo $evento['fecha'] . " " . $evento['hora']; ?> </p>
+                <p> <i class="<?php echo $evento['icono']; ?>" aria-hidden="true"> </i>
+                    <?php echo $evento['categoria']; ?>
+                </p>
+                <p> <i class="fas fa-user-circle"></i> <?php echo $evento['invitado']; ?> </p>
             </div>
-        <?php } // fin foreach eventos?>
 
-      <?php } // fin foreach de dias?>
+            <pre>
+             <?php var_dump($evento); ?>
+            </pre>
+
+         <?php } // fin foreach eventos?>
+
+
+
+       <?php } // fin foreach de dias?>
+
+
+
+   </div>
 
 
 
 
-  </div>
+  <!-- //siempre cerrar la conexion.! -->
+  <?php $conn->close(); ?>
 
-  <?php
-  //siempre cerrar la conexion.!
-  $conn->close();
-  ?>
 </section>
 
 
