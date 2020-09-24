@@ -29,18 +29,18 @@
          //fetch_assoc, es el formato como se muestra
          while ( $eventos = $resultado->fetch_assoc() ) {
 
-           // obtener fecha del evento
-           $fecha = $eventos['fecha_evento'];
+              // obtener fecha del evento
+              $fecha = $eventos['fecha_evento'];
 
-           $evento = array(
-               'titulo' => $eventos['nombre_evento'],
-               'fecha' => $eventos['fecha_evento'],
-               'hora' => $eventos['hora_evento'],
-               'categoria' => $eventos['cat_evento'],
-               'icono' => $eventos['icono'],
-               'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']
-           );
-           $calendario[$fecha] [] = $evento;
+              $evento = array(
+                  'titulo' => $eventos['nombre_evento'],
+                  'fecha' => $eventos['fecha_evento'],
+                  'hora' => $eventos['hora_evento'],
+                  'categoria' => $eventos['cat_evento'],
+                  'icono' => $eventos['icono'],
+                  'invitado' => $eventos['nombre_invitado'] . " " . $eventos['apellido_invitado']
+              );
+              $calendario[$fecha] [] = $evento;
          } // while de fetch_assoc() ?>
 
        <?php
@@ -56,7 +56,7 @@
            echo strftime("%A, %d de %B del %Y", strtotime($dia) );
            ?>
          </h3>
-         
+
          <?php foreach ($lista_eventos as $evento) { ?>
             <div class="dia">
                 <p class="titulo"> <?php echo $evento['titulo']; ?></p>
@@ -69,22 +69,12 @@
                 <p> <i class="fas fa-user-circle"></i> <?php echo $evento['invitado']; ?> </p>
             </div>
 
-            <pre>
-             <?php var_dump($evento); ?>
-            </pre>
 
          <?php } // fin foreach eventos?>
 
-
-
        <?php } // fin foreach de dias?>
 
-
-
-   </div>
-
-
-
+   </div> <!-- calendario -->
 
   <!-- //siempre cerrar la conexion.! -->
   <?php $conn->close(); ?>
