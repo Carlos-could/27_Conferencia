@@ -43,6 +43,7 @@
     ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
   </script>
   <script src="https://www.google-analytics.com/analytics.js" async></script>
+  <script src="js/jquery.colorbox.js"></script>
   <script src="js/main.js"></script>
 </body>
 
