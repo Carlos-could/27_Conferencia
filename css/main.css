@@ -304,6 +304,13 @@ p.slogan span{
    background-color: #353535;
    padding: 20px 0;
 }
+.fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
 .logo{
    width: 80%;
    float: left;
@@ -317,9 +324,10 @@ p.slogan span{
       float: left;
    }
 }
-/* .navegacion-principal{
+.navegacion-principal{
    display: none;
-} */
+   width: 100%;
+}
 .navegacion-principal a{
    font-family: 'Oswald', sans-serif;
    color: #ffffff;
@@ -794,7 +802,7 @@ footer nav.redes-sociales{
 /*** INTERNAS ***/
 /* Conferencia */
 .activo {
-   border-bottom: : 2px solid #fe4918;
+   border-bottom: 3px solid #fe4918;
 }
 
 .galeria a{

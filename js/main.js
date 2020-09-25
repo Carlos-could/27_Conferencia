@@ -27,6 +27,9 @@
       var camisas = document.getElementById('camisa_evento');
       var etiquetas = document.getElementById('etiquetas');
 
+      if (document.getElementById('calcular')) {
+
+
       calcular.addEventListener('click',calcularMontos);
 
       pase_dia.addEventListener('blur',mostrarDias);
@@ -35,8 +38,6 @@
       nombre.addEventListener('blur', validarCampos);
       apellido.addEventListener('blur', validarCampos);
       email.addEventListener('blur', validarEmail);
-
-
 
       function validarCampos() {
          if(this.value == ""){
@@ -160,7 +161,7 @@
             }
       }
 
-
+  } //cierre del If (para evitar error en consola)
     }; //DOM CONTENT LOADED
 })();
 
@@ -168,6 +169,26 @@ $(function() {
 
    // Lettering titulo MünchenWebcamp
    $('.nombre-sitio').lettering();
+
+   // Fijar barra de menu arriba (Scroll)
+   var windowsHeight = $(window).height();
+   var barraAltura = $('.barra').innerHeight();
+
+   $(window).scroll(function() {
+       var scroll = $(window).scrollTop();
+       if (scroll > windowsHeight) {
+           $('.barra').addClass('fixed');
+           $('body').css({'margin-top': barraAltura+'px'});
+       } else {
+           $('.barra').removeClass('fixed');
+           $('body').css({'margin-top': '0px'});
+       }
+   });
+
+   // Menu Responsive
+   $('.menu-movil').on('click', function() {
+       $('.navegacion-principal').slideToggle();
+   });
 
    //Agregar clase a menu (menu principal / pagina principal)
    $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
@@ -203,7 +224,6 @@ $(function() {
  });
 
   //Colorbox (pagina invitados)
-  $('.invitado-info').colorbox({inline:true, width:"50%"});
-
+  $('.invitado-info').colorbox({inline:true, width: "50%",});
 
 });
