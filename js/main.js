@@ -164,8 +164,18 @@
     }; //DOM CONTENT LOADED
 })();
 
-//Programa de Conferencias
 $(function() {
+
+   // Lettering titulo MünchenWebcamp
+   $('.nombre-sitio').lettering();
+
+   //Agregar clase a menu (menu principal / pagina principal)
+   $('body.conferencia .navegacion-principal a:contains("Conferencia")').addClass('activo');
+   $('body.calendario .navegacion-principal a:contains("Calendario")').addClass('activo');
+   $('body.invitados .navegacion-principal a:contains("Invitados")').addClass('activo');
+
+
+   //Programa de Conferencias (pagina principal)
   $('.programa-evento .info-curso:first').show()
   $('.menu-programa a:first').addClass('activo')
 
@@ -176,11 +186,24 @@ $(function() {
     var enlace = $(this).attr('href')
     $(enlace).fadeIn(1000);
     return false;
-
   });
+
+  //Animacion numero - arriba de precio (pagina principal)
+  $('.resumen-evento li:nth-child(1) p').animateNumber({number:6}, 1200);
+  $('.resumen-evento li:nth-child(2) p').animateNumber({number:15}, 1500);
+  $('.resumen-evento li:nth-child(3) p').animateNumber({number:3}, 1400);
+  $('.resumen-evento li:nth-child(4) p').animateNumber({number:9}, 1500);
+
+  //Countdown - dias que faltan (pagina principal)
+  $('.cuenta-regresiva').countdown('2021/02/06 18:00:00', function(event){
+     $('#dias').html(event.strftime('%D') );
+     $('#horas').html(event.strftime('%H') );
+     $('#minutos').html(event.strftime('%M') );
+     $('#segundos').html(event.strftime('%S') );
+ });
+
+  //Colorbox (pagina invitados)
+  $('.invitado-info').colorbox({inline:true, width:"50%"});
+
+
 });
-
-
-//Colorbox
-
-$('.invitado-info').colorbox( { inline:true, width:"50%"} );

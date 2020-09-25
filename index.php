@@ -81,47 +81,7 @@
 
     <!-- -------------- Nuestros Invitados ------------- -->
 
-    <section class="invitados contenedor">
-      <h2>Nuestros invitados</h2>
-      <ul class="lista-invitados clearfix">
-        <li>
-          <div class="invitado">
-            <img src="img/invitado1.jpg" alt="">
-            <p>Rafael Bautista</p>
-          </div>
-        </li>
-        <li>
-          <div class="invitado">
-            <img src="img/invitado2.jpg" alt="">
-            <p>Shari Herrera</p>
-          </div>
-        </li>
-        <li>
-          <div class="invitado">
-            <img src="img/invitado3.jpg" alt="">
-            <p>Gregorio Sanchez</p>
-          </div>
-        </li>
-        <li>
-          <div class="invitado">
-            <img src="img/invitado4.jpg" alt="">
-            <p>Susana Rivera</p>
-          </div>
-        </li>
-        <li>
-          <div class="invitado">
-            <img src="img/invitado5.jpg" alt="">
-            <p>Harold Garcia</p>
-          </div>
-        </li>
-        <li>
-          <div class="invitado">
-            <img src="img/invitado6.jpg" alt="">
-            <p>Susan Sanchez</p>
-          </div>
-        </li>
-      </ul>
-    </section>
+    <?php include_once 'includes/templates/invitados.php'; ?>
 
 
   <!-- -------------- Contador ------------- -->
@@ -129,10 +89,10 @@
     <div class="contador parallax">
       <div class="contenedor">
         <ul class="resumen-evento clearfix">
-          <li> <p class="numero">6</p> Invitados</li>
-          <li> <p class="numero">15</p> Talleres</li>
-          <li> <p class="numero">3</p> Días </li>
-          <li> <p class="numero">9</p> Conferencias</li>
+          <li> <p class="numero"></p> Invitados</li>
+          <li> <p class="numero"></p> Talleres</li>
+          <li> <p class="numero"></p> Días </li>
+          <li> <p class="numero"></p> Conferencias</li>
         </ul>
       </div>
     </div>
@@ -240,10 +200,10 @@
         <h2>Faltan</h2>
         <div class="cuenta-regresiva contenedor">
             <ul class="clearfix">
-                <li> <p class="numero">8</p> días </li>
-                <li> <p class="numero">15</p> horas </li>
-                <li> <p class="numero">5</p> minutos </li>
-                <li> <p class="numero">30</p> segundos </li>
+                <li> <p id="dias" class="numero"></p> días </li>
+                <li> <p id="horas" class="numero"></p> horas </li>
+                <li> <p id="minutos" class="numero"></p> minutos </li>
+                <li> <p id="segundos" class="numero"></p> segundos </li>
             </ul>
         </div>
     </section>
