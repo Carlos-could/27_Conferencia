@@ -946,10 +946,10 @@ div.resumen input{
    padding: 10px 0;
 }
 
-.calendario{
+div.calendario::after {
   clear: both;
-  display: inline-block;
-  content: " ";
+  display: block;
+  content: "";
 }
 .dia{
   width: 50%;

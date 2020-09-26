@@ -22,7 +22,7 @@
     }
    ?>
 
-   <div class="calendario">
+
        <?php
          $calendario = array();
          //imprimimos los resultados
@@ -43,6 +43,7 @@
               $calendario[$fecha] [] = $evento;
          } // while de fetch_assoc() ?>
 
+      <div class="calendario">
        <?php
          //imprimir todos los Eventos
        foreach ($calendario as $dia => $lista_eventos) { ?>
