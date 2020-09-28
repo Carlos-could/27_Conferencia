@@ -18,7 +18,7 @@
       //consultamos la base de datos
       $resultado = $conn->query($sql);
     } catch (\Exception $e) {
-        echo $e->getMessage();
+        $error = $e->getMessage();
     }
    ?>
 
