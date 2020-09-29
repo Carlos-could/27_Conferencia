@@ -812,14 +812,23 @@ footer nav.redes-sociales{
 
 /* Registro */
 
-form.registro h3{
-  text-align: center;
-  margin: 20px 0 0 0;
-  text-transform: uppercase;
-}
 form.registro label{
-  margin-bottom: 5px;
-  font-weight: bold;
+  margin: 10px;
+  /* font-weight: bold; */
+}
+form.registro input{
+  border-radius: 5px;
+  height: 2.2rem;
+  /* font-weight: bold; */
+}
+input placeholder {
+    margin-left: 2rem;
+}
+
+form.registro h3{
+    text-align: center;
+    margin: 20px 0 0 0;
+    /* text-transform: uppercase; */
 }
 
 h4{
